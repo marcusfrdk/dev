@@ -2,7 +2,7 @@
 
 # Dev
 
-'dev' is a simple command line program to easily organize your projects and access them.
+A command line program to easily organize your projects and access them.
 
 ## Requirements
 
