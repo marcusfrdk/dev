@@ -8,6 +8,14 @@
 
 ## Installation
 
+### Automatic Script
+
+```bash
+curl -s https://raw.githubusercontent.com/marcusfrdk/dev/main/install_from_cloud.sh | bash
+```
+
+### Download Repository
+
 ```bash
 git clone https://github.com/marcusfrdk/dev.git
 cd dev
@@ -48,8 +56,12 @@ dev {PROJECT}
 
 In the `config.sh` file, you can configure the editor to use, the path to store projects and your session file (.bashrc, .zshrc, etc.).
 
+_Note: The configuration in `config.sh` is only applied once `install.sh` is executed. After first install, config is updated in the session file._
+
 ```bash
 DEV_IDE=nvim # editor, e.g. nvim, code, etc.
 DEV_BASEPATH="$HOME/Development" # where to store projects
 DEV_SHOULD_CLOSE=0 # 0=keep shell open, 1=close shell after IDE process exits
 ```
+
+_If you updated the config in `config.sh`, execute the `install.sh` file, otherwise run `exec $SHELL` to refresh your session_
