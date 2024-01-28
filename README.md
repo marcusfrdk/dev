@@ -2,11 +2,12 @@
 
 # Dev
 
-'dev' is a simple command line program to easily access your projects.
+'dev' is a simple command line program to easily organize your projects and access them.
 
 ## Requirements
 
-- A system with bash installed
+- Bash
+- Git
 
 ## Installation
 
@@ -48,7 +49,7 @@ _Note: This only removes the program from your session file, it DOES NOT remove 
 
 ### Change Directory
 
-This changes the current sessions current working directory to the directory of your projects.
+Changes the current working directory to `DEV_BASEPATH` (Default is `~/Development`)
 
 ```bash
 dev
@@ -56,24 +57,35 @@ dev
 
 ### Open Project
 
-Opens a specific project in your IDE of choice. The project must exist in the development folder.
-
-_You can press TAB after 'dev' to autocomplete existing directories._
+Opens a specific project in your IDE of choice (Default is `nvim`)
 
 ```bash
 dev {PROJECT}
 ```
 
+_Note: Autocomplete using tab is supported_
+
 ## Configuration
 
-In the `config.sh` file, you can configure the editor to use, the path to store projects and your session file (.bashrc, .zshrc, etc.).
-
-_Note: The configuration in `config.sh` is only applied once `install.sh` is executed. After first install, config is updated in the session file._
+### Values
 
 ```bash
-DEV_IDE=nvim # editor, e.g. nvim, code, etc.
-DEV_BASEPATH="$HOME/Development" # where to store projects
-DEV_SHOULD_CLOSE=0 # 0=keep shell open, 1=close shell after IDE process exits
+DEV_IDE=nvim # the IDE to use, e.g. neovim, vscode, etc.
+DEV_BASEPATH="$HOME/Development" # the base directory where you store your projects.
+DEV_SHOULD_CLOSE=0 # 0=keep the shell open, 1=close the shell after the IDE process exits.
 ```
 
-_If you updated the config in `config.sh`, execute the `install.sh` file, otherwise run `exec $SHELL` to refresh your session._
+### In `config.sh`
+
+After updating the config file, run the following commands to update the program:
+
+```bash
+./install.sh
+exec $SHELL
+```
+
+### In session file (`.bashrc`, `.zshrc`, etc.)
+
+After changing the values in your session file, refresh your session to update the program (`exec $SHELL`).
+
+_Note: Values changed in your session file will be reset after the script `uninstall.sh` is run._
