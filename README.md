@@ -1,3 +1,5 @@
+![Hero](./hero.jpg)
+
 # Dev
 
 'dev' is a simple command line program to easily access your projects.
@@ -8,13 +10,13 @@
 
 ## Installation
 
-### Automatic Script
+### From Cloud
 
 ```bash
 curl -s https://raw.githubusercontent.com/marcusfrdk/dev/main/install_from_cloud.sh | bash
 ```
 
-### Download Repository
+### From Repository
 
 ```bash
 git clone https://github.com/marcusfrdk/dev.git
@@ -26,11 +28,21 @@ exec $SHELL
 
 ## Uninstallation
 
+### From Cloud
+
+```bash
+curl -s https://raw.githubusercontent.com/marcusfrdk/dev/main/uninstall_from_cloud.sh | bash
+```
+
+### From Repository
+
 ```bash
 chmod +x uninstall.sh
 ./uninstall.sh
 exec $SHELL
 ```
+
+_Note: This only removes the program from your session file, it DOES NOT remove your project folder._
 
 ## Usage
 
@@ -64,4 +76,4 @@ DEV_BASEPATH="$HOME/Development" # where to store projects
 DEV_SHOULD_CLOSE=0 # 0=keep shell open, 1=close shell after IDE process exits
 ```
 
-_If you updated the config in `config.sh`, execute the `install.sh` file, otherwise run `exec $SHELL` to refresh your session_
+_If you updated the config in `config.sh`, execute the `install.sh` file, otherwise run `exec $SHELL` to refresh your session._
