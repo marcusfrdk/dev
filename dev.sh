@@ -14,9 +14,11 @@ _dev_complete() {
 # 'dev' command
 dev() {
     local PROJECT="$1"
+    local CWD=$(pwd)
 
     if [[ -n "$PROJECT" ]]; then
         local PROJECT_PATH="$DEV_BASEPATH/$PROJECT"
+        cd $PROJECT_PATH
         if [[ -d "$PROJECT_PATH" ]]; then
             $DEV_IDE $PROJECT_PATH
 
@@ -26,6 +28,7 @@ dev() {
         else
             echo "Project '$PROJECT' does not exist"
         fi
+        cd $CWD
     else
         cd "$DEV_BASEPATH"
     fi

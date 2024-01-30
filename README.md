@@ -9,6 +9,13 @@ A command line program to easily organize your projects and access them.
 - Bash
 - Git
 
+## Tested
+
+- **Ubuntu** on **22.04**
+- **MacOS** (_with bash_) on **Sonoma 14.3**
+
+_Other system configurations are untested, if you would like to contribute, open a pull request_
+
 ## Installation
 
 ### From Cloud
